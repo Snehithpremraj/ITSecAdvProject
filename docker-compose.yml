@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      # Ollama keeps running on the WSL2 host, outside the container.
+      - OLLAMA_HOST=http://host.docker.internal:11434
+    extra_hosts:
+      # Makes host.docker.internal resolve on plain Docker Engine too
+      # (not just Docker Desktop).
+      - "host.docker.internal:host-gateway"

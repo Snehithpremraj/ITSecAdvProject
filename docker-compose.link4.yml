@@ -1,0 +1,13 @@
+# Overlay that arms Link 4 (the dangerous notify() swap, CWE-78 shell exec).
+#
+# Never run standalone -- combine with the base compose file so networking
+# and OLLAMA_HOST are still set:
+#
+#   docker-compose -f docker-compose.yml -f docker-compose.link4.yml up --build
+#
+# Do NOT export ACME_LINK4_RCE=1 outside a container. This is the seam that
+# turns the Link 3 seeded tool-call into arbitrary command execution.
+services:
+  app:
+    environment:
+      - ACME_LINK4_RCE=1

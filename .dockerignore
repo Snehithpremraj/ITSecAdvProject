@@ -1,0 +1,26 @@
+.venv/
+venv/
+env/
+
+__pycache__/
+**/__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Generated lab artifacts — rebuilt by setup_db.py / created at runtime.
+*.db
+*.sqlite
+*.sqlite3
+*.jsonl
+runs/
+results/
+
+.env
+*.env
+
+.git
+.gitignore
+.claude/
+Dockerfile
+docker-compose.yml
+.dockerignore
